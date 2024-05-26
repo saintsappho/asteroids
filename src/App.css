@@ -1,0 +1,156 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-image: url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2NremRmcHBjYjJ6aXRhams5cXNibHIzN3Q1NmpiMWQwMTd6Yzg0OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/W5g5W5hMkzrJQDpN3P/giphy.gif");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.appTitle {
+  font-size: 2.5em;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #90aecd;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.scale {
+  margin-left: 10%;
+  border: solid 3px white;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  min-width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.scale li {
+  list-style-type: disc;
+  margin-bottom: 5px;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  align-self: center;
+  margin: 0 auto;
+  gap: 10px;
+  padding: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  margin: 5px;
+  border: 3px solid #ddd;
+  background-color: #b8e9fe;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.link {
+  color: #1e90ff;
+  font-size: 1em;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #ff4500;
+}
+
+.danger {
+  color: red;
+  font-weight: bold;
+}
+
+.safe {
+  color: green;
+}
+
+.huge {
+  font-size: 3em;
+}
+
+.large {
+  font-size: 2em;
+}
+.medium {
+  font-size: 1.5em;
+}
+
+.small {
+  font-size: 1em;
+}
+
+.tiny {
+  font-size: 0.7em;
+}
+
+/* key */
+
+.key {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: left;
+  margin: 20px auto;
+  padding: 10px;
+  border: 3px solid #ddd;
+  background-color: #b8e9fe;
+  border-radius: 8px;
+  width: 80%;
+}
+
+.italicize {
+  font-style: italic;
+  font-weight: lighter;
+
+}
+
+.keyTitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.keyItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.keyColorBox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
