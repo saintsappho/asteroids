@@ -45,27 +45,19 @@ npm start
 ```
 
 This will start the development server and open the application in your default web browser. The app will automatically reload if you make changes to the code.
-```
 
-Project Structure
-public/: Contains the static files
-src/: Contains the React components, styles, and utilities
-components/: Reusable UI components
-services/: Functions to interact with the NASA API
-styles/: CSS and styling files
-App.js: Main application component
-index.js: Entry point for the React application
-Contributing
-Contributions are welcome! Please follow these steps to contribute:
 
-Fork the repository
-Create a new branch (git checkout -b feature/your-feature)
-Make your changes
-Commit your changes (git commit -m 'Add your feature')
-Push to the branch (git push origin feature/your-feature)
-Create a pull request
+## Project Structure
+=> public/: Contains the static files
+=> src/: Contains the React components, styles, and utilities
+    => components/: Reusable UI components
+    => styles/: CSS and styling files
+    => App.js: Main application component
+    => index.js: Entry point for the React application
 
-Contact
+
+## Contact
 If you have any questions or suggestions, feel free to reach out to robinrosefleur@gmail.com.
+________________________________________________________________
 
 Enjoy tracking near-Earth objects and stay curious about our cosmos!
