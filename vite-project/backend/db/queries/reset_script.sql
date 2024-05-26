@@ -1,0 +1,102 @@
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS pets CASCADE;
+DROP TABLE IF EXISTS posts CASCADE;
+DROP TABLE IF EXISTS events CASCADE;
+DROP TABLE IF EXISTS chats CASCADE;
+DROP TABLE IF EXISTS messages CASCADE;
+DROP TABLE IF EXISTS comments CASCADE;
+DROP TABLE IF EXISTS likes CASCADE;
+DROP TABLE IF EXISTS attendees CASCADE;
+DROP TABLE IF EXISTS follows CASCADE;
+DROP TABLE IF EXISTS votes CASCADE;
+DROP TABLE IF EXISTS choices CASCADE;
+DROP TABLE IF EXISTS polls CASCADE;
+
+CREATE TABLE users (
+  user_ID SERIAL PRIMARY KEY NOT NULL,
+  username VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  sub_ID VARCHAR(255) NOT NULL,
+  registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE pets (
+  pet_ID SERIAL PRIMARY KEY NOT NULL,
+  user_ID INTEGER REFERENCES users(user_ID),
+  species VARCHAR(255) NOT NULL,
+  breed VARCHAR(255) NOT NULL,
+  medical_conditions VARCHAR(255) NOT NULL,
+  diet VARCHAR(255) NOT NULL,
+  allergies VARCHAR(255) NOT NULL,
+  routines VARCHAR(255) NOT NULL,
+  registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE posts (
+  post_ID SERIAL PRIMARY KEY NOT NULL,
+  user_ID INTEGER REFERENCES users(user_ID),
+  pet_ID INTEGER REFERENCES pets(pet_ID),
+  image_file VARCHAR(255) NOT NULL,
+  style VARCHAR(255) NOT NULL,
+  sub_ID VARCHAR(255) NOT NULL,
+  registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE events (
+  creator_ID INTEGER REFERENCES users(user_ID),
+  title VARCHAR(255) NOT NULL,
+  event_description VARCHAR(255) NOT NULL,
+  event_location VARCHAR(255) NOT NULL,
+  scheduled_date DATE 
+);
+CREATE TABLE chats (
+  chat_ID SERIAL PRIMARY KEY NOT NULL,
+  user1_ID INTEGER REFERENCES users(user_ID),
+  user2_ID INTEGER REFERENCES users(user_ID)
+);
+CREATE TABLE messages (
+  message_ID SERIAL PRIMARY KEY NOT NULL,
+  chat_ID INTEGER REFERENCES chats(chat_ID),
+  sender INTEGER REFERENCES users(user_ID),
+  receiver INTEGER REFERENCES users(user_ID),
+  message VARCHAR(255) NOT NULL,
+  timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE comments (
+  comment_ID SERIAL PRIMARY KEY NOT NULL,
+  post_ID INTEGER REFERENCES posts(post_ID),
+  user_ID INTEGER REFERENCES users(user_ID),
+  content VARCHAR(255) NOT NULL,
+  timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE likes (
+  like_ID SERIAL PRIMARY KEY NOT NULL,
+  post_ID INTEGER REFERENCES posts(post_ID),
+  user_ID INTEGER REFERENCES users(user_ID)
+);
+CREATE TABLE attendees (
+  user_ID INTEGER REFERENCES users(user_ID),
+  event_ID INTEGER REFERENCES events(event_ID),
+  rsvp_status INTEGER DEFAULT 0
+);
+CREATE TABLE follows (
+  follow_ID SERIAL PRIMARY KEY NOT NULL,
+  follower INTEGER REFERENCES users(user_ID),
+  follow INTEGER REFERENCES users(user_ID)
+);
+
+CREATE TABLE polls (
+    poll_ID SERIAL PRIMARY KEY,
+    creator_ID INT REFERENCES users(user_ID),
+    title TEXT NOT NULL
+);
+
+CREATE TABLE choices (
+    choice_ID SERIAL PRIMARY KEY,
+    poll_ID INT REFERENCES polls(poll_ID),
+    choiceText TEXT NOT NULL
+);
+
+CREATE TABLE votes (
+    vote_ID SERIAL PRIMARY KEY,
+    poll_ID INT REFERENCES polls(poll_ID),
+    choice_ID INT REFERENCES choices(choice_ID),
+    user_ID INT REFERENCES users(user_ID)
+);

@@ -1,0 +1,247 @@
+.user-profile-container {
+  padding-top: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.user-profile-location {
+line-height: .2;
+font-size: 18px;
+color: grey;
+margin-top: -6px;
+margin-bottom: 20px; 
+}
+
+.user-profile-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scale: 1.3;
+  margin-top: -.6rem;
+  margin-bottom: -.6rem;
+}
+
+.user-profile-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-profile-header {
+  padding: 1rem;
+  padding-top: 1.4rem;
+  margin-right: 2rem;
+  border-radius: 12px;
+  border: 2px solid #cececea6;
+  box-shadow: 0 0 10px #808080d1;
+  width: 100%;
+  background-color: #e6e6faec;
+  display: block;
+  margin-left: auto;
+
+}
+
+.user-profile-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.pet-list-widget {
+  display: flex;
+}
+
+#pet-info-short {
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  border: 2px solid #cececea6;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #808080d1;
+  background-color: #e6e6fa;
+  margin: 1rem;
+}
+
+#friendButton {
+  border: 2px solid #00d7b3d1;
+  background-color: #078d91;
+}
+
+#messageButton {
+  border: 2px solid #00d7b3d1;
+  background-color: #078d91;
+}
+
+#petBreed {
+  border: 1px solid #000000d1;
+}
+#petName {
+  border: 1px solid #000000d1;
+}
+
+#pet-photo {
+  border-radius: 50%;
+  box-shadow: 0 0 3px #a5a5a5;
+  height: 6rem; 
+  width: 6rem;
+  object-fit: cover;
+  border: 2px solid #cececea6;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 0 9px #737373;
+
+  &:hover {
+    box-shadow: 0 0 25px rgb(255, 84, 0);/* Adds a shadow */
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+h1.user-profile-name {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: light;
+  margin-bottom: 1rem;
+  line-height: 0.8;
+}
+
+img.user-profile-image {
+  cursor: pointer;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0.8rem rgb(0, 20, 255), 0 0 3rem rgb(0, 188, 85);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 50px rgb(255, 84, 0);/* Adds a shadow */
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.profile-pet-points {
+  background-color: #e6e6fa;
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 15rem;
+}
+
+ .pet-points-profile-widget-ranking {
+  color: brown;
+  padding-top:1rem;
+ }
+
+ .pet-points-profile-widget h3 {
+  margin-top: -12px;
+ }
+ 
+ .pet-points-profile-widget h4 {
+  margin-top: -12px;
+ }
+
+ .pet-points-profile-widget-content {
+  line-height: 1;
+ }
+
+.profile-achievement-icon {
+  display: inline-block;
+  scale: 250%;
+  margin-right: 10rem;
+}
+
+.profile-achievements-list li {
+  list-style-type: '';
+  padding: .6rem;
+}
+
+ .pet-points-profile-achievements-list {
+  display: flex;
+  position: sticky;
+  flex-direction: row;
+  width: 72%;
+  padding-left: -3rem;
+ }
+
+ #profile-achievement-list-item {
+  margin-left: -4px;
+ }
+
+ .profile-achievement-description {
+  font-size: small;
+  width: 120%;
+  margin-top: -1rem;
+ }
+
+
+/* Tablet and mobile layout*/
+@media only screen and (max-width: 480px) {
+  img.user-profile-image {
+    cursor: pointer;
+    margin-top: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0.8rem rgb(0, 20, 255), 0 0 3rem rgb(0, 188, 85);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 50px rgb(63, 0, 70); /* Adds a shadow */
+      transform: scale(1.1);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .user-profile-container {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-profile-header {
+    width: 75%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 1rem;
+    position: sticky;
+    margin-top: -13rem;
+  }
+
+  #bio {
+    padding-left: 1%;
+    padding-right: 1%;
+    font-size: smaller;
+    margin-top: -10px;
+  }
+
+  .user-profile-buttons {
+    scale: 1.1;
+  }
+
+  h1.user-profile-name {
+    font-size: 1.9rem;
+    font-weight: bold;
+    font-family: light;
+    margin-bottom: 1rem;
+    line-height: 0.3;
+  }
+
+  img.user-profile-image {
+    cursor: pointer;
+    margin-top: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0.8rem rgb(0, 20, 255), 0 0 3rem rgb(0, 188, 85);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 50px rgb(63, 0, 70); /* Adds a shadow */
+      transform: scale(1.1);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  
+}
+
