@@ -4,7 +4,7 @@ export default function Table() {
   let [nasaData, setNasaData] = useState(null);
 
   useEffect(() => {
-    const apiKey = "ZD3sKZ0JPAJMnQJhW2dJNtE5BDP6aCuR13NusuFr";
+    const apiKey = process.env.REACT_APP_NASA_API_KEY;
     fetch(
       `https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=${apiKey}`
     )

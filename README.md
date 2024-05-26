@@ -17,7 +17,6 @@ Before you begin, ensure you have met the following requirements:
 - Node.js installed on your machine
 - npm (Node Package Manager) installed
 - A NASA API key (you can obtain one from [NASA API Portal](https://api.nasa.gov/))
-### For the time being, a demo key has been included in this repo.
 
 ## Installation
 
@@ -33,6 +32,7 @@ Before you begin, ensure you have met the following requirements:
     ```
 
 3. Create a `.env` file in the root directory and add your NASA API key:
+    You can copy the env.example if needed.
     ```env
     REACT_APP_NASA_API_KEY=your_nasa_api_key
     ```
